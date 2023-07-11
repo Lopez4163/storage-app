@@ -15,7 +15,7 @@ function InventoryRow({
     const { name, value } = event.target
     setUpdatedItem(prevItem => ({ ...prevItem, [name]: value }))
   }
-
+  //LOCALHOST API
   const handleUpdate = () => {
     Axios.put(`http://localhost:8080/api/update/${item.id}`, updatedItem)
       .then(() => {
@@ -35,6 +35,31 @@ function InventoryRow({
         console.log(error)
       })
   }
+
+  // const handleUpdate = () => {
+  //   Axios.put(
+  //     `lin-22748-12976-mysql-primary.servers.linodedb.net/api/update/${item.id}`,
+  //     updatedItem
+  //   )
+  //     .then(() => {
+  //       handleSave(item.id, updatedItem)
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  // }
+
+  // const handleDeleteItem = () => {
+  //   Axios.delete(
+  //     `lin-22748-12976-mysql-primary.servers.linodedb.net/api/delete/${item.id}`
+  //   )
+  //     .then(() => {
+  //       handleDelete(item.id)
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  // }
 
   return (
     <tr className="inventory-row" key={item.id}>

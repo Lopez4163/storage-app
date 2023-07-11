@@ -17,6 +17,7 @@ function App() {
     )
   }
 
+  // localhost
   function submitReview(reviewData) {
     const { itemName, quantity, location, pricePerUnit } = reviewData
     Axios.post("http://localhost:8080/api/insert", {
@@ -28,7 +29,18 @@ function App() {
       alert("success insert")
     })
   }
-
+  // //linode
+  // function submitReview(reviewData) {
+  //   const { itemName, quantity, location, pricePerUnit } = reviewData
+  //   Axios.post("lin-22748-12976-mysql-primary.servers.linodedb.net", {
+  //     itemName: itemName,
+  //     quantity: quantity,
+  //     location: location,
+  //     pricePerUnit: pricePerUnit,
+  //   }).then(() => {
+  //     alert("success insert")
+  //   })
+  // }
   return (
     <div className="container">
       <div className="header">

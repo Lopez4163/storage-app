@@ -6,7 +6,7 @@ import Axios from "axios"
 function InventoryTable({ items, setItems }) {
   const [editItemId, setEditItemId] = useState(null)
   const [error, setError] = useState(null)
-
+  //ALL LOCAL API
   useEffect(() => {
     Axios.get("http://localhost:8080/api/get")
       .then(response => {
@@ -53,6 +53,59 @@ function InventoryTable({ items, setItems }) {
         setError(error)
       })
   }
+
+  // //LINODE API
+  // useEffect(() => {
+  //   Axios.get("lin-22748-12976-mysql-primary.servers.linodedb.net/api/get")
+  //     .then(response => {
+  //       setItems(response.data)
+  //     })
+  //     .catch(error => {
+  //       setError(error)
+  //     })
+  // }, [setItems])
+
+  // const handleEdit = itemId => {
+  //   setEditItemId(itemId)
+  // }
+
+  // const handleSave = (itemId, updatedItem) => {
+  //   Axios.put(
+  //     `lin-22748-12976-mysql-primary.servers.linodedb.net/api/update/${itemId}`,
+  //     updatedItem
+  //   )
+  //     .then(response => {
+  //       const updatedItems = items.map(item => {
+  //         if (item.id === itemId) {
+  //           return response.data
+  //         } else {
+  //           return item
+  //         }
+  //       })
+  //       setItems(updatedItems)
+  //       setEditItemId(null)
+  //     })
+  //     .catch(error => {
+  //       setError(error)
+  //     })
+  // }
+
+  // const handleCancel = () => {
+  //   setEditItemId(null)
+  // }
+
+  // const handleDelete = itemId => {
+  //   Axios.delete(
+  //     `lin-22748-12976-mysql-primary.servers.linodedb.net/api/delete/${itemId}`
+  //   )
+  //     .then(response => {
+  //       const updatedItems = items.filter(item => item.id !== itemId)
+  //       setItems(updatedItems)
+  //     })
+  //     .catch(error => {
+  //       setError(error)
+  //     })
+  // }
 
   if (error) {
     return <div>Error: {error.message}</div>
