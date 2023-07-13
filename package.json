@@ -7,5 +7,8 @@
     "ssh2": "^1.14.0",
     "tunnel-ssh": "^5.1.1",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "vite-plugin-mkcert": "^1.16.0"
   }
 }
