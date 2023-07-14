@@ -6,6 +6,12 @@ import mkcert from "vite-plugin-mkcert"
 export default defineConfig({
   plugins: [react()],
 
+  scripts: {
+    dev: "vite --host",
+    build: "tsc && vite build",
+    preview: "vite preview",
+  },
+
   server: {
     https: {
       key: "ssl/key.pem",
