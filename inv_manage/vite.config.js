@@ -7,12 +7,13 @@ export default defineConfig({
   plugins: [react()],
 
   scripts: {
-    dev: "vite --host",
+    dev: "vite --port $npm_package_scripts_port",
     build: "tsc && vite build",
     preview: "vite preview",
   },
 
   server: {
+    port: 3000,
     https: {
       key: "ssl/key.pem",
       cert: "ssl/cert.pem",
